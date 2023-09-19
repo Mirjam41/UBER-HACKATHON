@@ -1,1 +1,31 @@
+function assignAssistanceWorker(isLowIncome, isElderly, isDisabled) {
+  let workerType = "";
 
+  if (isLowIncome && !isElderly && !isDisabled) {
+    workerType = "Volunteer worker";
+  } else if (isElderly && !isLowIncome && !isDisabled) {
+    workerType = "Volunteer worker";
+  } else if (isDisabled && !isLowIncome && !isElderly) {
+    workerType = "Amateur worker";
+  } else if (isElderly && isLowIncome && !isDisabled) {
+    workerType = "Amateur worker";
+  } else if (isLowIncome && isDisabled && !isElderly) {
+    workerType = "Amateur worker";
+  } else if (isElderly && isDisabled && !isLowIncome) {
+    workerType = "Experienced worker";
+  } else if (isElderly && isLowIncome && isDisabled) {
+    workerType = "Experienced worker";
+  } else {
+    workerType = "Unknown worker";
+  }
+
+  return workerType;
+}
+
+// Example usage:
+const isLowIncome = true;
+const isElderly = false;
+const isDisabled = true;
+
+const assistanceWorkerType = assignAssistanceWorker(isLowIncome, isElderly, isDisabled);
+console.log(`The assigned assistance worker type is: ${assistanceWorkerType}`);
