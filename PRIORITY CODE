@@ -1,1 +1,23 @@
+function calculatePriority(elderly, disabled, lowIncome) {
+  if (elderly && !disabled && !lowIncome) {
+    return 'Low priority';
+  } else if ((disabled || lowIncome) && !elderly) {
+    return 'Medium priority';
+  } else if ((lowIncome && disabled) || (elderly && disabled) || (elderly && lowIncome)) {
+    return 'High priority';
+  } else if (elderly && disabled && lowIncome) {
+    return 'Very high priority';
+  } else {
+    return 'Invalid input';
+  }
+}
 
+// Example usage:
+const customer1 = { elderly: true, disabled: false, lowIncome: false };
+console.log(`Customer 1: ${calculatePriority(customer1.elderly, customer1.disabled, customer1.lowIncome)}`);
+
+const customer2 = { elderly: false, disabled: true, lowIncome: false };
+console.log(`Customer 2: ${calculatePriority(customer2.elderly, customer2.disabled, customer2.lowIncome)}`);
+
+const customer3 = { elderly: true, disabled: true, lowIncome: true };
+console.log(`Customer 3: ${calculatePriority(customer3.elderly, customer3.disabled, customer3.lowIncome)}`);
