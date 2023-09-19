@@ -1,1 +1,26 @@
+function calculatePoints(distanceInKm, option) {
+  let points = 0;
 
+  switch (option) {
+    case "payForSomeoneElse":
+      points = distanceInKm * 10;
+      break;
+    case "carPool":
+      points = distanceInKm * 10;
+      break;
+    case "lessUtilizedRoute":
+      points = distanceInKm * 8;
+      break;
+    default:
+      console.log("Invalid option");
+  }
+
+  return points;
+}
+
+// Example usage:
+const distance = 15; // Replace with the actual distance traveled in kilometers
+const chosenOption = "payForSomeoneElse"; // Replace with the chosen transportation option
+
+const earnedPoints = calculatePoints(distance, chosenOption);
+console.log(`You earned ${earnedPoints} points for choosing ${chosenOption}.`);
