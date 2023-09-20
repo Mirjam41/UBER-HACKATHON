@@ -15,5 +15,5 @@ Due to the scarcity of resources, it is very possible that the business may face
 The purpose of the point system is to promote the less admired transportation methods (usually public transport) and facilitate the inhibition of congestion during peak hours.
 
 
-## 
+## How the code works
 
